@@ -854,8 +854,96 @@ hr.white {
 }
 .top-slider .item {
 	overflow: hidden;
-	height: 450px;
-	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.top-slider .item--slide1 {
+	background-image: url('/dist/images/slide1.jpg');
+}
+.top-slider .item--slide2 {
+	background-image: url('/dist/images/slide2.jpg');
+}
+.top-slider .item--slide3 {
+	background-image: url('/dist/images/slide3.jpg');
+}
+.top-slider .item--active {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.top-slider__btn {
+	position: absolute;
+	cursor: pointer;
+	top: 50%;
+	z-index: 5;
+	display: none;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-repeat: no-repeat;
+	background-size: 34px;
+	border-radius: 50%;
+	-webkit-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+.top-slider__btn.prev {
+	left: 20px;
+	background-image: url(../images/icons/left-arrow.svg);
+	background-position: 25% 50%;
+}
+.top-slider__btn.next {
+	right: 20px;
+	background-image: url(../images/icons/right-arrow.svg);
+	background-position: 75% 50%;
+}
+.top-slider__btn:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+.top-slider__dots {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	margin: 20px auto 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	z-index: 5;
+}
+.top-slider .dot {
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	margin: 0 10px;
+	border-radius: 50%;
+	border: solid #fff;
+	display: inline-block;
+	-webkit-transition: background-color, -webkit-transform 0.4s;
+	transition: background-color, transform 0.4s, -webkit-transform 0.4s;
+}
+.top-slider .dot--active {
+	background-color: #19b5fe;
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.top-slider .dot:hover {
+	background-color: #53c6fe;
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
 }
 .top-slider .item:before {
 	content: "";
@@ -899,11 +987,12 @@ video#video_background {
 }
 
 @media only screen and (min-width: 768px) {
-	.top-slider .item {
-		height: 400px;
-	}
+
 	.top-slider {
 		height: 400px;
+	}
+	.top-slider__btn {
+		display: block;
 	}
 	.header-push {
 		height: 100px;
@@ -925,12 +1014,11 @@ video#video_background {
 }
 
 @media only screen and (min-width: 992px) {
-	.top-slider .item {
-		height: 520px;
-	}
+
 	.top-slider {
 		height: 520px;
 	}
+
 	.top-slider .table {
 		opacity: 0;
 		visibility: hidden;
@@ -942,7 +1030,7 @@ video#video_background {
 		-o-transition: 0.5s;
 		transition: 0.5s;
 	}
-	.top-slider .table.active {
+	.item--active .table {
 		webkit-transform: scale(1);
 		-ms-transform: scale(1);
 		-o-transform: scale(1);
@@ -960,29 +1048,24 @@ video#video_background {
 }
 
 @media only screen and (min-width: 1360px) {
-	.top-slider .item {
-		height: 600px;
-	}
+
 	.top-slider {
 		height: 600px;
 	}
 }
 /* end top slider */
 
-/************************* accordeon **************************/
-.accordeon .element-content {
-	display: none;
-	padding: 20px;
-	font-size: 13px;
-	color: #888885;
-}
-.accordeon .element {
+/************************* accordion **************************/
+
+.accordion .element {
+	position: relative;
 	margin-bottom: 6px;
 	background: #fff;
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
-.accordeon .element .title {
+.accordion .element__title {
 	cursor: pointer;
+	margin-bottom: 0;
 	padding: 17px 15px 17px 70px;
 	text-transform: uppercase;
 	font-family: "Helios";
@@ -990,17 +1073,18 @@ video#video_background {
 	font-size: 13px;
 	letter-spacing: 0.5px;
 	position: relative;
-	color: #888885;
+	color: #fff;
+	background-color: #e9bb26;
 	-webkit-transition: all 200ms ease-out;
 	-moz-transition: all 200ms ease-out;
 	-o-transition: all 200ms ease-out;
 	transition: all 200ms ease-out;
 }
-.accordeon .element.active .title {
-	background: #e9bb26;
+.accordion .element__title.active {
+	background-color: #2fab6d;
 	color: #fff !important;
 }
-.accordeon .element .title:before {
+.accordion .element__title:before {
 	font-family: "FontAwesome";
 	content: "";
 	display: block;
@@ -1018,22 +1102,34 @@ video#video_background {
 	-o-transition: all 200ms ease-out;
 	transition: all 200ms ease-out;
 }
-.accordeon .element.active .title:before {
+.active.element__title:before {
 	background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
-.accordeon > div:first-of-type .element-content {
-	display: block;
+.accordion .element__content {
+	position: relative;
+	overflow: hidden;
+	max-height: 0;
+	transition: .3s;;
+	font-size: 13px;
+	color: #888885;
+	transition: .3s ease-in-out;
 }
-.accordeon .element .title:hover:before {
+.accordion .element__content p {
+	padding: 20px;
+}
+/* .accordion > div:first-of-type .element-content {
+	display: block;
+} */
+.accordion .element .element__title:hover:before {
 	background-color: #333;
 }
-.accordeon .element .title:hover {
+.accordion .element .element__title:hover {
 	color: #333333;
 }
-.accordeon > div:last-of-type {
+.accordion > div:last-of-type {
 	margin-bottom: 0;
 }
-/************************* end accordeon **************************/
+/************************* end accordion **************************/
 
 /**** steps section *****/
 .steps-section .img-wrapper {
@@ -1068,7 +1164,47 @@ video#video_background {
 /**** /. steps section *****/
 
 /**** services section *****/
-
+.services-elements {
+	width: 100%;
+	margin-bottom: 50px;
+}
+.services-carousel {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% / 3) - 12px);
+	gap: 16px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: 0;
+}
+.services-carousel .element {
+	scroll-snap-align: start;
+}
+.services-carousel::-webkit-scrollbar {
+	display: none;
+}
+.services-carousel.no-transition {
+	scroll-behavior: auto;
+}
+.services-carousel.dragging {
+	scroll-snap-type: none;
+	scroll-behavior: auto;
+}
+.services-carousel.dragging .element {
+	cursor: grab;
+	user-select: none;
+}
+@media screen and (max-width: 900px) {
+	.services-carousel {
+		grid-auto-columns: calc((100% / 2) - 9px);
+	}
+}
+@media screen and (max-width: 600px) {
+	.services-carousel {
+		grid-auto-columns: 100%;
+	}
+}
 .services-arrow {
 	display: flex;
 	justify-content: center;
@@ -1125,29 +1261,30 @@ video#video_background {
 .services-section .element:hover .img-wrapper:after {
 	opacity: 1;
 }
-.services-section .element .img-wrapper:before {
-	content: "Оформить заявку";
-	display: block;
+
+.callback-btn--service {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
+	z-index: 2;
 	width: 200px;
 	height: 48px;
 	top: 50%;
 	left: 50%;
-	margin-left: -100px;
-	-webkit-transition: all 200ms ease-out;
-	-moz-transition: all 200ms ease-out;
-	-o-transition: all 200ms ease-out;
-	transition: all 200ms ease-out;
-	margin-top: -24px;
-	z-index: 2;
-	opacity: 0;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+	border: 2px solid #fff;
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
 	text-transform: uppercase;
-	border: 2px solid #fff;
+	opacity: 0;
+	transition: all 200ms ease-out;
+	cursor: pointer;
 }
-.services-section .element:hover .img-wrapper:before {
+
+.services-section .element:hover .callback-btn--service{
 	opacity: 1;
 }
 .services-section .element .img-wrapper img {
@@ -1210,7 +1347,9 @@ video#video_background {
 	font-weight: bold;
 	color: #2fab6d;
 }
-
+.top {
+	display: none;
+}
 .up {
 	position: fixed;
 	bottom: 50px;

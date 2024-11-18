@@ -16,8 +16,8 @@
 
 	<!-- STYLESHEETS :: FONTS -->
 	<link
-		href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic'
-		rel='stylesheet' type='text/css'>
+		href="https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic"
+		rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- STYLESHEETS :: TEMPLATE -->
 	<link href="css/style.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 	<!-- * * * * * * Mobile menu * * * * * * -->
 	<div class="mobile-menu">
 		<span class="mobile-menu-close close"></span>
-		<a href="#callback" class="callback-btn fancyboxModal hidden-sm"><i class="fa fa-phone"></i> Заказать звонок</a>
+		<a href="#callback" class="callback-btn"><i class="fa fa-phone"></i> Заказать звонок</a>
 		<div class="push20"></div>
 		<ul>
 			<li><a href="#services">Цены на услуги</a></li>
@@ -73,7 +73,7 @@
 						<span></span>
 						<span></span>
 					</div>
-					<a href="#callback" class="callback-btn fancyboxModal hidden-xs" id="callback-btn">Заказать звонок</a>
+					<a href="#callback" class="callback-btn" id="callback-btn">Заказать звонок</a>
 
 					<!-- * * * * * * Top menu * * * * * * -->
 					<div class="top-menu visible-md-inline-block visible-lg-inline-block">
@@ -95,13 +95,12 @@
 
 		<!-- * * * * * * Top slider * * * * * * -->
 		<div class="top-slider white text-center relative">
-			<div class="item relative"
-				style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover;">
+			<div class="item item--slide1">
 				<div class="table">
 					<div class="table-cell">
 						<div class="container">
 							<h1 class="big">
-								Шаблон сайта электрика
+								Ремонт электрики
 							</h1>
 							<div class="text">
 								Решите свою проблему прямо сейчас! Низкие цены. <br />
@@ -111,29 +110,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="item relative"
-				style="background: url(images/slide2.jpg) 50% 50% no-repeat; background-size: cover;">
+			<div class="item item--active  item--slide2">
 				<div class="table">
 					<div class="table-cell">
 						<div class="container">
 							<div class="title-h1 big">
-								Другой кричащий заголовок!
-							</div>
-							<div class="text">
-								В этом блоке можно разместить несколько слайдов на любую тематику, с необходимыми вам
-								заголовками и текстами
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="item relative"
-				style="background: url(images/slide3.jpg) 50% 50% no-repeat; background-size: cover;">
-				<div class="table">
-					<div class="table-cell">
-						<div class="container">
-							<div class="title-h1 big">
-								Услуги электрика
+								Монтаж электропроводки
 							</div>
 							<div class="text">
 								Решите свою проблему прямо сейчас! Низкие цены. <br />
@@ -143,7 +125,28 @@
 					</div>
 				</div>
 			</div>
-
+			<div class="item item--slide3">
+				<div class="table">
+					<div class="table-cell">
+						<div class="container">
+							<div class="title-h1 big">
+								Монтаж осветительных приборов
+							</div>
+							<div class="text">
+								Решите свою проблему прямо сейчас! Низкие цены. <br />
+								Найдете дешевле - вернем разницу!
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="top-slider__btn prev" id="arrow-left"></a>
+			<a href="#" class="top-slider__btn next" id="arrow-right"></a>
+			<ul class="top-slider__dots">
+				<li class="dot dot--active"></li>
+				<li class="dot"></li>
+				<li class="dot"></li>
+			</ul>
 		</div>
 		<!-- * * * * * * Top slider: end * * * * * * -->
 
@@ -161,115 +164,122 @@
 
 
 				<div class="services-elements">
-					<div class="row services-carousel">
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Аварийный выезд"></a>
-								<div class="img-wrapper">
-									<img src="images/service1.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Аварийный выезд</div>
-									<div class="element-price">от 790 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+					<div class="services-carousel">
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Аварийный выезд"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service1.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Аварийный выезд</div>
+								<div class="element-price">от 790 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Монтаж или замена электропроводки"></a>
-								<div class="img-wrapper">
-									<img src="images/service2.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Монтаж или замена электропроводки</div>
-									<div class="element-price">от 1790 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Монтаж или замена электропроводки"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service2.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Монтаж или замена электропроводки</div>
+								<div class="element-price">от 1790 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Ремонт, замена, перенос розеток"></a>
-								<div class="img-wrapper">
-									<img src="images/service3.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Ремонт, замена, перенос розеток</div>
-									<div class="element-price">от 990 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Ремонт, замена, перенос розеток"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service3.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Ремонт, замена, перенос розеток</div>
+								<div class="element-price">от 990 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Замена электросчетчика"></a>
-								<div class="img-wrapper">
-									<img src="images/service4.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Замена электросчетчика</div>
-									<div class="element-price">от 990 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Замена электросчетчика"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service4.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Замена электросчетчика</div>
+								<div class="element-price">от 990 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Установка, замена люстры"></a>
-								<div class="img-wrapper">
-									<img src="images/service5.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Установка, замена люстры</div>
-									<div class="element-price">от 790 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Установка, замена люстры"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service5.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Установка, замена люстры</div>
+								<div class="element-price">от 790 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4">
-							<div class="element relative">
-								<a class="absolute fancyboxModal" href="#application"
-									data-application="Установка светильников"></a>
-								<div class="img-wrapper">
-									<img src="images/service6.jpg">
-								</div>
-								<div class="element-content">
-									<div class="title-h5 upper">Установка светильников</div>
-									<div class="element-price">от 490 руб.</div>
-									<div class="text">
-										Идейные соображения высшего порядка, а также постоянный количественный рост и
-										сфера нашей активности способствует подготовки
-									</div>
+						<div class="element relative">
+							<!-- <a class="absolute fancyboxModal" href="#application"
+								data-application="Установка светильников"></a> -->
+							<div class="img-wrapper">
+								<img src="images/service6.jpg" draggable="false">
+								<button class="callback-btn callback-btn--service" href="#">
+									Оформить заявку
+								</button>
+							</div>
+							<div class="element-content">
+								<div class="title-h5 upper">Установка светильников</div>
+								<div class="element-price">от 490 руб.</div>
+								<div class="text">
+									Идейные соображения высшего порядка, а также постоянный количественный рост и
+									сфера нашей активности способствует подготовки
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 
 				<div class="services-arrow">
-					<img class="arrow-left" src="images/right-arrow_1.svg" alt="arrow-left">
-					<img class="arrow-right" src="images/right-arrow_1.svg" alt="arrow-right">
+					<img class="arrow arrow-left" id="left" src="images/right-arrow_1.svg" alt="arrow-left">
+					<img class="arrow arrow-right" id="right" src="images/right-arrow_1.svg" alt="arrow-right">
 				</div>
 
 			</div>
@@ -283,9 +293,10 @@
 			<div class="container text-center">
 				<span class="f30 helios">Не нашли нужной услуги?</span>
 				<div class="push20 visible-xs visible-sm"></div>
-				<a class="button button-services fancyboxModal invert" href="#feedback">Звоните, мы обязательно вам
-					поможем!</a>
-			</div>
+
+				<button class="button button-services invert callback-btn">
+					Звоните, мы обязательно вам поможем!
+				</button></div>
 			<div class="push50"></div>
 		</section>
 		<!-- * * * * * * Quest section: end * * * * * * -->
@@ -464,8 +475,8 @@
 
 
 
-		<!-- * * * * * * Accordeon section * * * * * * -->
-		<section class="accordeon-section" id="faq">
+		<!-- * * * * * * Accordion section * * * * * * -->
+		<section class="accordion-section" id="faq">
 			<div class="push100"></div>
 			<div class="container">
 				<div class="title-h2 upper text-center">Самые частые вопросы</div>
@@ -475,55 +486,55 @@
 				</p>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<div class="accordeon">
-							<div class="element active">
-								<div class="title">
-									Как построена ваша работа?
-								</div>
-								<div class="element-content">
-									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает
-									широкому кругу (специалистов) участие
-									в формировании систем массового участия. Значимость этих проблем настолько очевидна,
-									что новая модель организационной
-									деятельности способствует подготовки и реализации модели развития
-								</div>
-							</div>
-							<div class="element">
-								<div class="title">
-									Заключаете ли вы договор?
-								</div>
-								<div class="element-content">
-									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает
-									широкому кругу (специалистов) участие
-									в формировании систем массового участия. Значимость этих проблем настолько очевидна,
-									что новая модель организационной
-									деятельности способствует подготовки и реализации модели развития
+						<div class="accordion">
+
+							<div class="accordion__element element">
+								<h3 class="element__title" data-tab="tab-1">
+								Как построена ваша работа?
+								</h3>
+								<div class="element__content" id="tab-1">
+									<p>
+										С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и реализации модели развития
+									</p>
 								</div>
 							</div>
-							<div class="element">
-								<div class="title">
-									Какие материалы вы используете?
-								</div>
-								<div class="element-content">
-									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает
-									широкому кругу (специалистов) участие
-									в формировании систем массового участия. Значимость этих проблем настолько очевидна,
-									что новая модель организационной
-									деятельности способствует подготовки и реализации модели развития
-								</div>
-							</div>
-							<div class="element">
-								<div class="title">
-									Даете ли вы гарантию и на сколько?
-								</div>
-								<div class="element-content">
-									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает
-									широкому кругу (специалистов) участие
-									в формировании систем массового участия. Значимость этих проблем настолько очевидна,
-									что новая модель организационной
-									деятельности способствует подготовки и реализации модели развития
+
+
+							<div class="accordion__element element">
+								<h3 class="element__title" data-tab="tab-2">
+								Заключаете ли вы договор?
+								</h3>
+								<div class="element__content" id="tab-2">
+									<p>
+										С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и реализации модели развития
+									</p>
 								</div>
 							</div>
+
+
+							<div class="accordion__element element">
+								<h3 class="element__title" data-tab="tab-3">
+								Какие материалы вы используете?
+								</h3>
+								<div class="element__content" id="tab-3">
+								<p>
+									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и реализации модели развития
+								</p>
+								</div>
+							</div>
+
+
+							<div class="accordion__element element">
+								<h3 class="element__title" data-tab="tab-4">
+								Даете ли вы гарантию и на сколько?
+								</h3>
+								<div class="element__content" id="tab-4">
+								<p>
+									С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и реализации модели развития
+								</p>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -712,7 +723,9 @@
 
 
 	<!-- * * * * * * button to top * * * * * * -->
-	<img src="images/32_chevron_up.svg" alt="up" class="up">
+	<a class="top" href="#">
+		<img src="images/32_chevron_up.svg" alt="up" class="up">
+	</a>
 	<!-- * * * * * * button to top: end * * * * * * -->
 
 
