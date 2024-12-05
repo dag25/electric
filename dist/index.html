@@ -641,16 +641,28 @@
 		<br />
 		<div class="rf">
 			<form action="" name="form-callback">
-				<div class="form-group">
-					<input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
-				</div>
+				<label class="form-group">
+					<input
+						type="text"
+						name="fio"
+						class="form-control"
+						placeholder="Ваше имя"
+					/>
+				</label>
 
-				<div class="form-group">
-					<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
-				</div>
+				<label class="form-group">
+					<input
+						type="phone"
+						name="tel"
+						class="form-control tel required" placeholder="Телефон*"
+					/>
+
+				</label>
 				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
 				<div>
-					<input type="submit" class="button btn feedback" value="Отправить" />
+					<button type="submit" class="button btn feedback success" value="Отправить">
+						Отправить
+					</button>
 				</div>
 			</form>
 		</div>
@@ -678,7 +690,7 @@
 
 				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
 				<div>
-					<input type="submit" class="button btn feedback" value="Отправить" />
+					<button type="submit" class="button btn feedback" value="Отправить" />
 				</div>
 			</form>
 		</div>

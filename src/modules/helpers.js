@@ -17,4 +17,10 @@ const animate = ({ timing, draw, duration }) => {
 	});
 };
 
-export {animate};
+const validatePhoneNumber = (phoneNumber) => {
+	const pattern = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,4}$/;
+
+	return pattern.test(phoneNumber);
+}
+
+export { animate, validatePhoneNumber };

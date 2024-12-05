@@ -212,7 +212,7 @@ a.absolute {
 	display: inline-block;
 	text-decoration: none !important;
 	color: #fff !important;
-	background: #e9bb26;
+	background-color: #e9bb26;
 	font-size: 18px;
 	padding: 12px 35px;
 	margin-bottom: 15px;
@@ -254,6 +254,23 @@ a.absolute {
 .form-group {
 	position: relative;
 }
+/* Для изменения цвета обводки элемента формы при валидации */
+.form__type-input-error {
+  border: 1px solid #FF8630;
+  background-color: rgb(255 134 48 / 0.1);
+}
+
+/* Для отображения span-элемента с ошибкой */
+.form__error-active {
+  display: block;
+}
+
+/* Для блокировки кнопки submit */
+.button-inactive {
+  cursor: default;
+  background-color: rgb(211 211 211 / 0.6);
+}
+
 .modal {
 	display: none;
 	width: 460px;
@@ -281,7 +298,8 @@ a.absolute {
 	right: 10px;
 	cursor: pointer;
 }
-.modal-callback {
+.modal-callback,
+.modal {
 	display: none;
 	position: fixed;
 	top: 20%;
